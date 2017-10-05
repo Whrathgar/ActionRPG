@@ -9,11 +9,13 @@
     <sprite>sprites\spr_player_run_up</sprite>
     <sprite>sprites\spr_player_run_down</sprite>
     <sprite>sprites\spr_player_run_right</sprite>
+    <sprite>sprites\spr_solid</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <objects name="objects">
     <object>objects\obj_player</object>
+    <object>objects\obj_solid</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\r_base</room>
