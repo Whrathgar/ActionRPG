@@ -27,16 +27,25 @@
             <kind>1</kind>
             <string>///initialize variables
 image_speed = 0;
-speed_=2;
+speed_= 2;
 global.player_health = 4;
 
-inventory_[0,0] = "sword";
-inventory_[0,1] = "potion";
-inventory_[1,0] = "magic spell";
-inventory_[1,1] = "note";
+enum player {
+   move
+}
 
-show_message(inventory_[1,0]);
+enum dir {
+    right,
+    up,
+    left,
+    down
+}
 
+///sprite move lookup table
+sprite_[player.move,dir.right] = spr_player_run_right;
+sprite_[player.move,dir.up] = spr_player_run_up;
+sprite_[player.move,dir.left] = spr_player_run_right
+sprite_[player.move,dir.down] = spr_player_run_down;
 </string>
           </argument>
         </arguments>
