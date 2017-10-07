@@ -28,6 +28,7 @@
             <string>///initialize variables
 image_speed = 0;
 speed_= 2;
+direction_facing_= dir.right;
 global.player_health = 4;
 
 enum player {
@@ -77,7 +78,7 @@ if keyboard_check(vk_right)
 {
     x += speed_;
     sprite_index=spr_player_run_right;
-    image_speed=_animation_speed;
+    direction_facing_=dir.right;
     image_xscale=1;
 }
 
@@ -85,7 +86,7 @@ if keyboard_check(vk_left)
 &amp;&amp; !place_meeting(x-speed_, y, obj_solid)
 {
     x -= speed_;
-    sprite_index=spr_player_run_right;
+    direction_facing_=dir.left;
     image_speed=_animation_speed;
     image_xscale=-1;
 }
@@ -94,7 +95,7 @@ if keyboard_check(vk_down)
 &amp;&amp; !place_meeting(x, y+speed_,obj_solid)
 {
     y += speed_;
-    sprite_index=spr_player_run_down;
+    direction_facing_=dir.down;
     image_speed=_animation_speed;
 }
 
@@ -102,7 +103,7 @@ if keyboard_check(vk_up)
 &amp;&amp; !place_meeting(x, y-speed_,obj_solid)
 {
     y -= speed_;
-    sprite_index=spr_player_run_up;
+    direction_facing_=dir.up;
     image_speed=_animation_speed;
 }
 
@@ -110,7 +111,7 @@ if keyboard_check(ord("D"))
 &amp;&amp; !place_meeting(x+speed_, y, obj_solid)
 {
     x += speed_;
-    sprite_index=spr_player_run_right;
+    direction_facing_=dir.right;
     image_speed=_animation_speed;
     image_xscale=1;
 }
@@ -119,7 +120,7 @@ if keyboard_check(ord("A"))
 &amp;&amp; !place_meeting(x-speed_, y, obj_solid)
 {
     x -= speed_;
-    sprite_index=spr_player_run_right;
+    direction_facing_=dir.left;
     image_speed=_animation_speed;
     image_xscale=-1;
 }
@@ -128,7 +129,7 @@ if keyboard_check(ord("S"))
 &amp;&amp; !place_meeting(x, y+speed_,obj_solid)
 {
     y += speed_;
-    sprite_index=spr_player_run_down;
+    direction_facing_=dir.down;
     image_speed=_animation_speed;
 }
 
@@ -136,9 +137,11 @@ if keyboard_check(ord("W"))
 &amp;&amp; !place_meeting(x, y-speed_,obj_solid)
 {
     y -= speed_;
-    sprite_index=spr_player_run_up;
+    direction_facing_=dir.up;
     image_speed=_animation_speed;
 }
+
+sprite_index=sprite_[player.move, direction_facing_];
 </string>
           </argument>
         </arguments>
